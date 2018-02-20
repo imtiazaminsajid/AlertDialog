@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setMessage("Do You Sure for Exit?")
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Do You Sure for Exit?");
+                builder.setTitle("Are You Sure?")
                         .setCancelable(true)
                         .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                             @Override
@@ -36,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dialogInterface.cancel();
                             }
-                        });
+
+                        })
+                        .show();
+
 
 
             }
